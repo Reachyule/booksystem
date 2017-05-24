@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">  
+<struts>  
+    <!--  <include file="example.xml"/>  -->  
+   <package name="default" extends="struts-default">  
+        <action name="register" class="login.register">  
+            <result name="success">/login.jsp</result>  
+            <result name="input">/register.jsp</result>  
+            <result name="error">/register.jsp</result>  
+        </action>  
+        <action name="login1" class="login.login">  
+            <result name="success">/stuindex.jsp</result>  
+            <result name="input">/login.jsp</result>  
+            <result name="error">/login.jsp</result>  
+        </action>
+         <action name="login2" class="login.adminlogin">  
+            <result name="success">/index.jsp</result>  
+            <result name="input">/login.jsp</result>  
+            <result name="error">/login.jsp</result>  
+        </action> 
+        <action name="stulook" class="student.look">  
+            <result name="success">stulook.jsp</result>  
+            <result name="input">stuindex.jsp</result>  
+        </action>  
+        <action name="addMessageAction" class="studentAction.AddMessageAction">  
+            <result name="success" type="chain">lookMessageAction</result>  
+            <result name="input">/student/addMessage.jsp</result>  
+        </action>  
+        <action name="stufind" class="student.find">  
+            <result name="success">stuupdate.jsp</result>  
+            <result name="input">stuindex.jsp</result>  
+        </action>  
+        <action name="stuupdate" class="studentAction.UpdateMessageAction">  
+            <result name="success" type="chain">lookMessageAction</result>  
+            <result name="input">/student/updateMessage.jsp</result>  
+        </action>  
+        <action name="deleteMessageAction" class="studentAction.DeleteMessageAction">  
+            <result name="success" type="chain">lookMessageAction</result>  
+            <result name="input">/student/deleteMessage.jsp</result>  
+        </action>  
+    </package>  
+</struts>      

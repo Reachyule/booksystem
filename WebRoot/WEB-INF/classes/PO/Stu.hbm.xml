@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+<!-- Generated 2011-12-9 12:17:31 by Hibernate Tools 3.2.1.GA -->  
+<hibernate-mapping>  
+    <class name="PO.Stu" table="stu" >  
+        <id name="id" type="int">  
+            <column name="id" />  
+            <generator class="increment" />  
+        </id>  
+        <property name="stuid" type="string">  
+            <column name="stuid" length="20"  />  
+        </property>  
+        <property name="stuname" type="string">  
+            <column name="stuname" length="20"  />  
+        </property>  
+        <property name="stusex" type="string">  
+            <column name="stusex" length="20" />  
+        </property>  
+        <property name="stuage" type="int">  
+            <column name="stuage" length="20" />  
+        </property>
+        <property name="stuclass" type="string">  
+            <column name="stuclass" length="20"  />  
+        </property>    
+        <property name="stupassword" type="string">  
+            <column name="stupassword"   length="20" />  
+        </property>  
+    </class>  
+</hibernate-mapping>  

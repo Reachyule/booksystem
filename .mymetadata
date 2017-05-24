@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="tushu"
+  id="myeclipse.1493033961055"
+  context-root="/tushu"
+  j2ee-spec="5.0"
+  archive="tushu.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

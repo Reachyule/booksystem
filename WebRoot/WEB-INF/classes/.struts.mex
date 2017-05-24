@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="0,0" size="300,100">
+    <action name="register" location="10,20" size="100,50" />
+    <action name="login1" location="10,20" size="100,50" />
+    <action name="login2" location="10,20" size="100,50" />
+    <action name="stulook" location="10,20" size="100,50" />
+    <action name="addMessageAction" location="10,20" size="100,50" />
+    <action name="stufind" location="10,20" size="100,50" />
+    <action name="updateMessageAction" location="10,20" size="100,50" />
+    <action name="deleteMessageAction" location="10,20" size="100,50" />
+  </package>
+</Struts2Diagram>
+
