@@ -51,6 +51,11 @@
             <result name="input">/stuadd.jsp</result>  
             <result name="error">/stuadd.jsp</result>  
         </action>
+        <action name="adminadd" class="admin.adminadd">  
+            <result name="success">/adminadd2.jsp</result>  
+            <result name="input">/adminadd.jsp</result>  
+            <result name="error">/adminadd.jsp</result>  
+        </action>
         <action name="stufind1" class="admin.stufind">  
             <result name="success">sturevise2.jsp</result>  
             <result name="input">sturevise.jsp</result>  
@@ -58,7 +63,11 @@
         <action name="stuupdate1" class="admin.stuupdate">  
             <result name="success" type="chain">stuQuery</result>  
             <result name="input">sturevise2.jsp</result>  
-        </action>  
+        </action>
+        <action name="studel" class="admin.studel">  
+            <result name="success" type="chain">stuQuery</result>  
+            <result name="input">studel.jsp</result>  
+        </action>    
         <action name="tsquery" class="admin.tsquery">  
             <result name="success">tsQuery.jsp</result>  
             <result name="input">index.jsp</result>  
