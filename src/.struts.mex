@@ -7,8 +7,13 @@
     <action name="stulook" location="10,20" size="100,50" />
     <action name="addMessageAction" location="10,20" size="100,50" />
     <action name="stufind" location="10,20" size="100,50" />
-    <action name="updateMessageAction" location="10,20" size="100,50" />
+    <action name="stuupdate" location="10,20" size="100,50" />
     <action name="deleteMessageAction" location="10,20" size="100,50" />
+    <action name="adminQuery" location="10,20" size="100,50" />
+    <action name="stuQuery" location="10,20" size="100,50" />
+    <action name="stuadd" location="10,20" size="100,50" />
+    <action name="stufind" location="10,20" size="100,50" />
+    <action name="tsquery" location="10,20" size="100,50" />
   </package>
 </Struts2Diagram>
 

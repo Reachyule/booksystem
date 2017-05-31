@@ -40,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <li class="active"> <a href="http://localhost:8080/boy/index.jsp" class="active"> <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span>主页</span> </a> </li>
                   <li > <a href="...." > <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>图书信息管理</span> </a>
                     <ul class="nav lt">
-                    	<li > <a href="http://localhost:8080/boy/tsQuery.jsp" > <i class="fa fa-angle-right"></i> <span>查询图书信息</span> </a> </li>
+                    	<li > <a href="tsquery" > <i class="fa fa-angle-right"></i> <span>查询图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsadd.jsp" > <i class="fa fa-angle-right"></i> <span>增加图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsrevise.jsp" > <i class="fa fa-angle-right"></i> <span>修改图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsdel.jsp" > <i class="fa fa-angle-right"></i> <span>删除图书信息</span> </a> </li>
@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   </li>
                   <li > <a href="....." > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>读者信息管理</span> </a>
                     <ul class="nav lt">
-                    	<li > <a href="http://localhost:8080/boy/stuQuery.jsp" > <i class="fa fa-angle-right"></i> <span>查询读者信息</span> </a> </li>
+                    	<li > <a href="stuQuery" > <i class="fa fa-angle-right"></i> <span>查询读者信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/stuadd.jsp" > <i class="fa fa-angle-right"></i> <span>注册读者信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/sturevise.jsp" > <i class="fa fa-angle-right"></i> <span>修改读者信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/studel.jsp" > <i class="fa fa-angle-right"></i> <span>删除读者信息</span> </a> </li>
@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   </li>
                   <li > <a href="......" > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>管理员信息管理</span> </a>
                     <ul class="nav lt">
-                    	<li > <a href="http://localhost:8080/boy/adminQuery.jsp" > <i class="fa fa-angle-right"></i> <span>查询管理员</span> </a> </li>
+                    	<li > <a href="adminQuery" > <i class="fa fa-angle-right"></i> <span>查询管理员</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/adminadd.jsp" > <i class="fa fa-angle-right"></i> <span>注册管理员</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/adminrevise.jsp" > <i class="fa fa-angle-right"></i> <span>修改管理员</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/admindel.jsp" > <i class="fa fa-angle-right"></i> <span>删除管理员</span> </a> </li>

@@ -30,13 +30,38 @@
             <result name="success">stuupdate.jsp</result>  
             <result name="input">stuindex.jsp</result>  
         </action>  
-        <action name="stuupdate" class="studentAction.UpdateMessageAction">  
-            <result name="success" type="chain">lookMessageAction</result>  
-            <result name="input">/student/updateMessage.jsp</result>  
+        <action name="stuupdate" class="student.update">  
+            <result name="success" >success.jsp</result>  
+            <result name="input">stuupdate.jsp</result>  
         </action>  
         <action name="deleteMessageAction" class="studentAction.DeleteMessageAction">  
             <result name="success" type="chain">lookMessageAction</result>  
             <result name="input">/student/deleteMessage.jsp</result>  
         </action>  
+        <action name="adminQuery" class="admin.adminquery">  
+            <result name="success" >adminQuery.jsp</result>  
+            <result name="input">index.jsp</result>  
+        </action>  
+        <action name="stuQuery" class="admin.stuquery">  
+            <result name="success" >stuQuery.jsp</result>  
+            <result name="input">index.jsp</result>  
+        </action>
+        <action name="stuadd" class="login.register">  
+            <result name="success">/stuadd2.jsp</result>  
+            <result name="input">/stuadd.jsp</result>  
+            <result name="error">/stuadd.jsp</result>  
+        </action>
+        <action name="stufind1" class="admin.stufind">  
+            <result name="success">sturevise2.jsp</result>  
+            <result name="input">sturevise.jsp</result>  
+        </action>
+        <action name="stuupdate1" class="admin.stuupdate">  
+            <result name="success" type="chain">stuQuery</result>  
+            <result name="input">sturevise2.jsp</result>  
+        </action>  
+        <action name="tsquery" class="admin.tsquery">  
+            <result name="success">tsQuery.jsp</result>  
+            <result name="input">index.jsp</result>  
+        </action>   
     </package>  
 </struts>      

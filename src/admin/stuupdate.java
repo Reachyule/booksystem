@@ -1,4 +1,4 @@
-package student;
+package admin;
 
 import com.opensymphony.xwork2.ActionSupport;
 import java.io.UnsupportedEncodingException;
@@ -8,7 +8,7 @@ import java.util.List;
 import Dao.tsupdate;  
 import PO.Stu;   
 import javax.swing.JOptionPane;  
-public class update extends ActionSupport{
+public class stuupdate extends ActionSupport{
 	private String stuid;
 	private String stuname;
 	private int stuage;

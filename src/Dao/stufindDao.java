@@ -6,26 +6,30 @@ import javax.swing.JOptionPane;
 import org.hibernate.Query;  
 import org.hibernate.Session;  
 import org.hibernate.Transaction;  
-public class tsupdate {
+public class stufindDao {
 	private Transaction transaction;  
     private Session session;  
     private Query query;  
     HibernateSessionFactory getSession;
-   public tsupdate(){};
-	public boolean updateInfo(Stu info){  
+    public stufindDao(){}
+    public List findInfo(String type,Object value){  
+        session=HibernateSessionFactory.getSession();  
         try{  
-            session=HibernateSessionFactory.getSession();  
             transaction=session.beginTransaction();  
-            session.update(info);  
+            String queryString="from Stu as model where model."+type+"=?";  
+            query=session.createQuery(queryString);  
+            query.setParameter(0, value);  
+            List list=query.list();  
             transaction.commit();  
             session.close();  
-            return true;  
+            return list;  
         }catch(Exception e){  
-            message("updateInfo.error:"+e);   
-            return false;  
+            message("findInfo.error:"+e);  
+            e.printStackTrace();  
+            return null;  
         }  
-    }
-	public void message(String mess){  
+    }  
+    public void message(String mess){  
         int type=JOptionPane.YES_NO_OPTION;  
         String title="提示信息";  
         JOptionPane.showMessageDialog(null, mess, title, type);  

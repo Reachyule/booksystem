@@ -1,4 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>  
+<%@page import="PO.Stu"%>
+<%@taglib  prefix="s" uri="/struts-tags" %>  
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -110,8 +113,78 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li class="active">主页</li>
             </ul>
             <div class="m-b-md">
-              <h3 class="m-b-none">图书管理系统</h3>
-              <small>tsdel</small> </div>
+            <s:form action="stuupdate1" method="post"> 
+    	<div class="signup">
+    	<table align="center" width="30%" bgcolor="gray" border="5"> 
+    	<%  
+                ArrayList list=(ArrayList)session.getAttribute("oneInfo");  
+                Stu info=(Stu)list.get(0);  
+                %> 
+        	 <tr>  
+                        <td>  
+                            学号  
+                        </td>  
+                        <td>  
+                            <input name="stuid" value="<%=info.getStuid()%>" readonly="readonly"/>  
+                        </td>  
+                    </tr>  
+                    <tr>  
+                        <td>  
+                            姓名  
+                        </td>  
+                        <td>  
+                            <input name="stuname" value="<%=info.getStuname()%>"/>  
+                        </td>  
+                    </tr>  
+                    <tr>  
+                        <td>  
+                            性别  
+                        </td>  
+                        <td>  
+                            <input name="stusex" value="<%=info.getStusex()%>"/>  
+                        </td>  
+                    </tr>  
+                    <tr>  
+                        <td>  
+                            年龄  
+                        </td>  
+                        <td>  
+                            <input name="stuage" value="<%=info.getStuage()%>"/>  
+                        </td>  
+                    </tr>  
+                    <tr>  
+                        <td>  
+                            班级  
+                        </td>  
+                        <td>  
+                            <input name="stuclass" value="<%=info.getStuclass()%>"/>  
+                        </td>  
+                    </tr>
+                    <tr>  
+                        <td>  
+                            新密码  
+                        </td>  
+                        <td>  
+                            <input type="password" name="password1" />  
+                        </td>  
+                    </tr> 
+                    <tr>  
+                        <td>  
+                            确定密码  
+                        </td>  
+                        <td>  
+                            <input type="password" name="password2" />  
+                        </td>  
+                    </tr>   
+                    <tr>  
+                        <td colspan="2">  
+                            <s:submit value="提交"></s:submit>  
+                        </td>  
+                    </tr>  
+                    </table>
+        </div>
+        </s:form>      
+                </div>
              
           </section>
         </section>

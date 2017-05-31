@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                <!-- 左侧导航 -->
               <nav class="nav-primary hidden-xs" style="height:500px">
                 <ul class="nav">
-                  <li class="active"> <a href="http://localhost:8080/boy/index.jsp" class="active"> <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span>主页</span> </a> </li>
+                  <li class="active"> <a href="http://localhost:8080/boy/stuindex.jsp" class="active"> <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span>主页</span> </a> </li>
                   <li > <a href="stulook" > <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>图书列表</span> </a>
                     
                   </li>
@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="m-b-md">
             <span>你要查询的数据表中共有<%=request.getSession().getAttribute("count")%>本书</span>
               <table border="1px" width="80%" align="center">
-            		<tr><th>图书编号</th><th>图书图片</th><th>图书名</th></tr>
+            		<tr><th>图书编号</th><th>图书图片</th><th>图书名</th><th>出版社</th><th>简介</th><th>剩余本书</th></tr>
             		<%
                 ArrayList list=(ArrayList)session.getAttribute("allInfo");  
                 if(list.isEmpty()){  
@@ -111,8 +111,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         %>  
                         <tr>  
                             <td align="center"><%=i+1%></td>  
-                            <td><img src="save/<%=info.getTsimg()%>"></td>  
+                            <td><img src="save/<%=info.getTsimg()%>" width="100px" height="120px"></td>  
                             <td><%=info.getTsname()%></td>
+                             <td><%=info.getTsCBS()%></td>
+                              <td><%=info.getTsJJ()%></td>
+                               <td><%=info.getTsISBN()%></td>
                         </tr>  
                         <%  
                     }  

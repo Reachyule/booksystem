@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>  
+<%@page import="PO.Stu"%>  
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -39,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <li class="active"> <a href="http://localhost:8080/boy/index.jsp" class="active"> <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span>主页</span> </a> </li>
                   <li > <a href="...." > <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>图书信息管理</span> </a>
                     <ul class="nav lt">
-                    	<li > <a href="http://localhost:8080/boy/tsQuery.jsp" > <i class="fa fa-angle-right"></i> <span>查询图书信息</span> </a> </li>
+                    	<li > <a href="tsquery" > <i class="fa fa-angle-right"></i> <span>查询图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsadd.jsp" > <i class="fa fa-angle-right"></i> <span>增加图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsrevise.jsp" > <i class="fa fa-angle-right"></i> <span>修改图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsdel.jsp" > <i class="fa fa-angle-right"></i> <span>删除图书信息</span> </a> </li>
@@ -47,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   </li>
                   <li > <a href="....." > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>读者信息管理</span> </a>
                     <ul class="nav lt">
-                    	<li > <a href="http://localhost:8080/boy/stuQuery.jsp" > <i class="fa fa-angle-right"></i> <span>查询读者信息</span> </a> </li>
+                    	<li > <a href="stuQuery" > <i class="fa fa-angle-right"></i> <span>查询读者信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/stuadd.jsp" > <i class="fa fa-angle-right"></i> <span>注册读者信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/sturevise.jsp" > <i class="fa fa-angle-right"></i> <span>修改读者信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/studel.jsp" > <i class="fa fa-angle-right"></i> <span>删除读者信息</span> </a> </li>
@@ -55,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   </li>
                   <li > <a href="......" > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>管理员信息管理</span> </a>
                     <ul class="nav lt">
-                    	<li > <a href="http://localhost:8080/boy/adminQuery.jsp" > <i class="fa fa-angle-right"></i> <span>查询管理员</span> </a> </li>
+                    	<li > <a href="adminQuery" > <i class="fa fa-angle-right"></i> <span>查询管理员</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/adminadd.jsp" > <i class="fa fa-angle-right"></i> <span>注册管理员</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/adminrevise.jsp" > <i class="fa fa-angle-right"></i> <span>修改管理员</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/admindel.jsp" > <i class="fa fa-angle-right"></i> <span>删除管理员</span> </a> </li>
@@ -110,8 +112,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li class="active">主页</li>
             </ul>
             <div class="m-b-md">
-              <h3 class="m-b-none">图书管理系统</h3>
-              <small>STU修改</small> </div>
+               <form action="stufind1" method="post">  
+        <table align="center" width="40%" border="1">  
+            <tr>  
+                <td>  
+                    请选择要修改学生的学号：  
+                </td>  
+                <td>  
+                    <select name="stuid">  
+                         <%  
+                            ArrayList list=(ArrayList)session.getAttribute("allInfo");  
+                            if(list.isEmpty()){  
+                                %>  
+                                <option value="null">null</option>  
+                                <%  
+                            }else{  
+                                for(int i=0;i<list.size();i++){  
+                                    Stu info=(Stu)list.get(i);  
+                                    %>  
+                                        <option value="<%=info.getStuid()%>"><%=info.getStuid()%></option>  
+                                    <%  
+                                    }  
+                                }  
+                            %>  
+                    </select>  
+                </td>  
+                <td>  
+                    <s:submit value="确定" ></s:submit>
+                    <input type="submit" value="提交"/>
+                </td>  
+            </tr>  
+        </table>  
+        </form>   </div>
              
           </section>
         </section>

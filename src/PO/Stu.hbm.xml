@@ -4,13 +4,10 @@
 <!-- Generated 2011-12-9 12:17:31 by Hibernate Tools 3.2.1.GA -->  
 <hibernate-mapping>  
     <class name="PO.Stu" table="stu" >  
-        <id name="id" type="int">  
-            <column name="id" />  
-            <generator class="increment" />  
+        <id name="stuid" type="string">  
+            <column name="stuid" length="20"/>  
+            <generator class="assigned" />  
         </id>  
-        <property name="stuid" type="string">  
-            <column name="stuid" length="20"  />  
-        </property>  
         <property name="stuname" type="string">  
             <column name="stuname" length="20"  />  
         </property>  

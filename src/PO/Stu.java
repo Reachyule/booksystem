@@ -1,20 +1,12 @@
 package PO;
 
-public class Stu {
-	private int id; 
+public class Stu { 
 	private String stuid;  
     private String stuname;  
     private String stusex;
     private int stuage;
     private String stuclass;
     private String stupassword;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getStuid() {
 		return stuid;
 	}

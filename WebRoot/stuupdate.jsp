@@ -146,7 +146,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             新密码  
                         </td>  
                         <td>  
-                            <input name="password1" />  
+                            <input type="password" name="password1" />  
                         </td>  
                     </tr> 
                     <tr>  
@@ -154,7 +154,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             确定密码  
                         </td>  
                         <td>  
-                            <input name="password2" />  
+                            <input type="password" name="password2" />  
                         </td>  
                     </tr>   
                     <tr>  

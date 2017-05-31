@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -39,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <li class="active"> <a href="http://localhost:8080/boy/index.jsp" class="active"> <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span>主页</span> </a> </li>
                   <li > <a href="...." > <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>图书信息管理</span> </a>
                     <ul class="nav lt">
-                    	<li > <a href="http://localhost:8080/boy/tsQuery.jsp" > <i class="fa fa-angle-right"></i> <span>查询图书信息</span> </a> </li>
+                    	<li > <a href="tsquery" > <i class="fa fa-angle-right"></i> <span>查询图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsadd.jsp" > <i class="fa fa-angle-right"></i> <span>增加图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsrevise.jsp" > <i class="fa fa-angle-right"></i> <span>修改图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsdel.jsp" > <i class="fa fa-angle-right"></i> <span>删除图书信息</span> </a> </li>
@@ -47,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   </li>
                   <li > <a href="....." > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>读者信息管理</span> </a>
                     <ul class="nav lt">
-                    	<li > <a href="http://localhost:8080/boy/stuQuery.jsp" > <i class="fa fa-angle-right"></i> <span>查询读者信息</span> </a> </li>
+                    	<li > <a href="stuQuery" > <i class="fa fa-angle-right"></i> <span>查询读者信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/stuadd.jsp" > <i class="fa fa-angle-right"></i> <span>注册读者信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/sturevise.jsp" > <i class="fa fa-angle-right"></i> <span>修改读者信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/studel.jsp" > <i class="fa fa-angle-right"></i> <span>删除读者信息</span> </a> </li>
@@ -55,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   </li>
                   <li > <a href="......" > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>管理员信息管理</span> </a>
                     <ul class="nav lt">
-                    	<li > <a href="http://localhost:8080/boy/adminQuery.jsp" > <i class="fa fa-angle-right"></i> <span>查询管理员</span> </a> </li>
+                    	<li > <a href="adminQuery" > <i class="fa fa-angle-right"></i> <span>查询管理员</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/adminadd.jsp" > <i class="fa fa-angle-right"></i> <span>注册管理员</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/adminrevise.jsp" > <i class="fa fa-angle-right"></i> <span>修改管理员</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/admindel.jsp" > <i class="fa fa-angle-right"></i> <span>删除管理员</span> </a> </li>
@@ -110,8 +111,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li class="active">主页</li>
             </ul>
             <div class="m-b-md">
-              <h3 class="m-b-none">图书管理系统</h3>
-              <small>STUADD</small> </div>
+            <s:form action="stuadd" method="post"> 
+    	<div class="signup">
+    	
+		<s:textfield name="stuid" placeholder="请输入学号" label="学号" ></s:textfield>
+		<s:textfield name="stuname" placeholder="请输入姓名" label="姓名"></s:textfield>
+		<s:select name="stusex"  label="性别" list="{'男','女'}" />
+		
+		<s:textfield name="stuage" placeholder="请输入年龄" label="年龄" ></s:textfield>
+		
+		<s:textfield name="stuclass" placeholder="请输入班级" label="班级" ></s:textfield>
+		<!--  <input type="text" name="userName" placeholder="请输入用户名"  required="">-->
+		<s:password name="password1" placeholder="请输入密码"  label="密码" ></s:password>
+	 	<!--<input type="password" name="password1" placeholder="" required="">-->
+	 	<s:password name="password2" placeholder="请重复密码" label="重复密码" ></s:password>
+	 	<!--  <input type="password" name="password2" placeholder="" required="">-->
+	 	<s:submit cssClass="BT" value="注册"></s:submit>
+        </div>
+        </s:form>                    
+               </div>
              
           </section>
         </section>
