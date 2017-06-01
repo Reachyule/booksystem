@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
-  <package name="default" location="0,0" size="300,100">
+  <package name="I18N" location="0,0" size="300,100">
+    <action name="tsadd" location="10,20" size="100,50" />
     <action name="register" location="10,20" size="100,50" />
     <action name="login1" location="10,20" size="100,50" />
     <action name="login2" location="10,20" size="100,50" />
@@ -12,9 +13,13 @@
     <action name="adminQuery" location="10,20" size="100,50" />
     <action name="stuQuery" location="10,20" size="100,50" />
     <action name="stuadd" location="10,20" size="100,50" />
+    <action name="adminadd" location="10,20" size="100,50" />
     <action name="stufind1" location="10,20" size="100,50" />
+    <action name="adminfind" location="10,20" size="100,50" />
     <action name="stuupdate1" location="10,20" size="100,50" />
+    <action name="adminupdate" location="10,20" size="100,50" />
     <action name="studel" location="10,20" size="100,50" />
+    <action name="admindel" location="10,20" size="100,50" />
     <action name="tsquery" location="10,20" size="100,50" />
   </package>
 </Struts2Diagram>

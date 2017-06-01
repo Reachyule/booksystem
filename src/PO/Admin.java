@@ -3,13 +3,6 @@ package PO;
 public class Admin {
 	private String adminname;
 	private String adminpassword;
-	private int id;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getAdminname() {
 		return adminname;
 	}

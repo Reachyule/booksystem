@@ -2,7 +2,17 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">  
 <struts>  
     <!--  <include file="example.xml"/>  -->  
-   <package name="default" extends="struts-default">  
+   <package name="I18N" extends="struts-default">
+   <action name="tsadd" class="admin.tsadd">
+        <interceptor-ref name = "fileUpload">
+        	<param name="maximumSize">10000000</param>  
+        	<param name="allowedTypes">img/gif,image/png,image/jpeg,image/jpg,image/pjpeg</param>  
+        </interceptor-ref>  
+        <interceptor-ref name="defaultStack"/>
+            <param name="savePath">./save</param>  
+            <result name="input">tsadd.jsp</result>
+            <result name="success">tsadd2.jsp</result>  
+        </action>  
         <action name="register" class="login.register">  
             <result name="success">/login.jsp</result>  
             <result name="input">/register.jsp</result>  
@@ -60,17 +70,29 @@
             <result name="success">sturevise2.jsp</result>  
             <result name="input">sturevise.jsp</result>  
         </action>
+        <action name="adminfind" class="admin.adminfind">  
+            <result name="success">adminrevise2.jsp</result>  
+            <result name="input">adminrevise.jsp</result>  
+        </action>
         <action name="stuupdate1" class="admin.stuupdate">  
             <result name="success" type="chain">stuQuery</result>  
             <result name="input">sturevise2.jsp</result>  
         </action>
+         <action name="adminupdate" class="admin.adminupdate">  
+            <result name="success" type="chain">adminQuery</result>  
+            <result name="input">adminrevise2.jsp</result>  
+        </action>
         <action name="studel" class="admin.studel">  
             <result name="success" type="chain">stuQuery</result>  
             <result name="input">studel.jsp</result>  
+        </action> 
+        <action name="admindel" class="admin.admindel">  
+            <result name="success" type="chain">adminQuery</result>  
+            <result name="input">admindel.jsp</result>  
         </action>    
         <action name="tsquery" class="admin.tsquery">  
             <result name="success">tsQuery.jsp</result>  
             <result name="input">index.jsp</result>  
-        </action>   
+        </action>
     </package>  
 </struts>      

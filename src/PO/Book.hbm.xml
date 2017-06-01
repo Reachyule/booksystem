@@ -4,21 +4,18 @@
 <!-- Generated 2011-12-9 12:17:31 by Hibernate Tools 3.2.1.GA -->  
 <hibernate-mapping>  
     <class name="PO.Book" table="book" >  
-        <id name="id" type="int">  
-            <column name="id" />  
+        <id name="tsname" type="string">  
+            <column name="tsname" />  
             <generator class="increment" />  
         </id>  
-        <property name="tsname" type="string">  
-            <column name="tsname" length="20"  />  
-        </property>  
         <property name="tsimg" type="string">  
             <column name="tsimg" length="50"  />  
         </property>  
         <property name="tsCBS" type="string">  
             <column name="tsCBS" length="20" />  
         </property>  
-        <property name="tsISBN" type="string">  
-            <column name="tsISBN" length="20"  />  
+        <property name="tsnumber" type="string">  
+            <column name="tsnumber" length="20"  />  
         </property>    
         <property name="tsJJ" type="string">  
             <column name="tsJJ"   length="100" />  

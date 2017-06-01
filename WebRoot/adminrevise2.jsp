@@ -1,5 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@taglib prefix="s" uri="/struts-tags" %>  
+<%@page import="java.util.ArrayList"%>  
+<%@page import="PO.Admin"%>
+<%@taglib  prefix="s" uri="/struts-tags" %>  
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -111,12 +113,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li class="active">主页</li>
             </ul>
             <div class="m-b-md">
-            	 <s:form action="tsadd"  enctype="multipart/form-data">  
-        		<s:textfield name="title" label="文件标题"></s:textfield><br/>  
-        		<s:file name ="upload" label="选择文件" />
-        		<s:submit value="上传"></s:submit>  
-    			</s:form>  
-               </div>
+            <s:form action="adminupdate" method="post"> 
+    	<div class="signup">
+    	<table align="center" width="30%" bgcolor="gray" border="5"> 
+    	<%  
+                ArrayList list=(ArrayList)session.getAttribute("oneInfo");  
+                Admin info=(Admin)list.get(0);  
+                %> 
+        	 <tr>  
+                        <td>  
+                            账号  
+                        </td>  
+                        <td>  
+                            <input name="adminname" value="<%=info.getAdminname()%>" readonly="readonly"/>  
+                        </td>  
+                    </tr>  
+                    <tr>  
+                        <td>  
+                            新密码  
+                        </td>  
+                        <td>  
+                            <input type="password" name="password1" />  
+                        </td>  
+                    </tr> 
+                    <tr>  
+                        <td>  
+                            确定密码  
+                        </td>  
+                        <td>  
+                            <input type="password" name="password2" />  
+                        </td>  
+                    </tr>   
+                    <tr>  
+                        <td colspan="2">  
+                            <s:submit value="提交"></s:submit>  
+                        </td>  
+                    </tr>  
+                    </table>
+        </div>
+        </s:form>      
+                </div>
              
           </section>
         </section>

@@ -4,13 +4,10 @@
 <!-- Generated 2011-12-9 12:17:31 by Hibernate Tools 3.2.1.GA -->  
 <hibernate-mapping>  
     <class name="PO.Admin" table="admin" >  
-        <id name="id" type="int">  
-            <column name="id" />  
+        <id name="adminname" type="string">  
+            <column name="adminname" />  
             <generator class="increment" />  
         </id>   
-        <property name="adminname" type="string">  
-            <column name="adminname" length="20"  />  
-        </property>    
         <property name="adminpassword" type="string">  
             <column name="adminpassword"   length="20" />  
         </property>  

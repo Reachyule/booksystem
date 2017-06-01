@@ -1,18 +1,11 @@
 package PO;
 
 public class Book {
-	private int id;
 	private String tsname;
 	private String tsimg;
 	private String tsCBS;
-	private String tsISBN;
+	private String tsnumber;
 	private String tsJJ;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getTsname() {
 		return tsname;
 	}
@@ -31,11 +24,12 @@ public class Book {
 	public void setTsCBS(String tsCBS) {
 		this.tsCBS = tsCBS;
 	}
-	public String getTsISBN() {
-		return tsISBN;
+
+	public String getTsnumber() {
+		return tsnumber;
 	}
-	public void setTsISBN(String tsISBN) {
-		this.tsISBN = tsISBN;
+	public void setTsnumber(String tsnumber) {
+		this.tsnumber = tsnumber;
 	}
 	public String getTsJJ() {
 		return tsJJ;
