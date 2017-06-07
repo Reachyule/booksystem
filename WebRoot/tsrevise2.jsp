@@ -1,6 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>  
-<%@page import="PO.Book"%>  
+<%@page import="PO.Book"%>
+<%@taglib  prefix="s" uri="/struts-tags" %>  
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -112,39 +113,62 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li class="active">主页</li>
             </ul>
             <div class="m-b-md">
-              <form action="tsfind" method="post">  
-        <table align="center" width="40%" border="1">  
-            <tr>  
-                <td>  
-                    请选择要修改图书的名称：  
-                </td>  
-                <td>  
-                    <select name="tsname">  
-                         <%  
-                            ArrayList list=(ArrayList)session.getAttribute("allInfo");  
-                            if(list.isEmpty()){  
-                                %>  
-                                <option value="null">null</option>  
-                                <%  
-                            }else{  
-                                for(int i=0;i<list.size();i++){  
-                                    Book info=(Book)list.get(i);  
-                                    %>  
-                                        <option value="<%=info.getTsname()%>"><%=info.getTsname()%></option>  
-                                    <%  
-                                    }  
-                                }  
-                            %>  
-                    </select>  
-                </td>  
-                <td>  
-                    
-                    <input type="submit" value="提交"/>
-                </td>  
-            </tr>  
-        </table>  
-        </form>
-               </div>
+            <s:form action="tsupdate" method="post"> 
+    	<div class="signup">
+    	<table align="center" width="30%" bgcolor="gray" border="5"> 
+    	<%  
+                ArrayList list=(ArrayList)session.getAttribute("oneInfo");  
+                Book info=(Book)list.get(0);  
+                %> 
+        	 <tr>  
+                        <td>  
+                            图书名  
+                        </td>  
+                        <td>  
+                            <input name="tsname" value="<%=info.getTsname()%>" readonly="readonly"/>  
+                        </td>  
+                    </tr>  
+                    <tr>  
+                        <td>  
+                            出版社  
+                        </td>  
+                        <td>  
+                            <input name="tsCBS" value="<%=info.getTsCBS()%>" />   
+                        </td>  
+                    </tr> 
+                    <tr>  
+                        <td>  
+                            简介  
+                        </td>  
+                        <td>  
+                            <input name="tsJJ" value="<%=info.getTsJJ()%>" />  
+                        </td>  
+                    </tr> 
+                    <tr>  
+                        <td>  
+                            库存  
+                        </td>  
+                        <td>  
+                            <input name="tsnumber" value="<%=info.getTsnumber()%>" />  
+                        </td>  
+                    </tr>
+                    <tr>  
+                        <td>  
+                            图片  
+                        </td>  
+                        <td>  
+                            <input name="tsimg" value="<%=info.getTsimg()%>" readonly="readonly"/>  
+                        </td>  
+                    </tr>          
+                    <tr>  
+                        <td colspan="2">  
+                            <s:submit value="提交"></s:submit>  
+                        </td>  
+                    </tr>  
+                    </table>
+        </div>
+        </s:form>      
+                </div>
              
           </section>
         </section>

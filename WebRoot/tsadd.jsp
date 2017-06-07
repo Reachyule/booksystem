@@ -112,8 +112,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </ul>
             <div class="m-b-md">
             	 <s:form action="tsadd"  enctype="multipart/form-data">  
-        		<s:textfield name="title" label="文件标题"></s:textfield><br/>  
-        		<s:file name ="upload" label="选择文件" />
+        		<s:textfield name="tsname" placeholder="请输入图书名" label="图书名"></s:textfield><br/>
+				<s:textfield name="tsCBS" placeholder="请输入出版社名" label="出版社"></s:textfield>
+				<s:textfield name="tsnumber" placeholder="请输入库存" label="书本数量" ></s:textfield>
+				<s:textfield name="tsJJ" placeholder="请输入简介" label="简介"></s:textfield>
+        		<s:file name ="upload" label="选择封面" />
         		<s:submit value="上传"></s:submit>  
     			</s:form>  
                </div>

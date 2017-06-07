@@ -16,8 +16,8 @@ public class admindel extends ActionSupport{
 	}
 	public void validate(){  
         if(this.getAdminname().equals("null")){  
-            message("暂无学生信息！");  
-            addFieldError("adminname","暂无学生信息！");  
+            message("暂无管理员信息！");  
+            addFieldError("adminname","暂无管理员信息！");  
         }  
     }  
     public String execute() throws Exception{  

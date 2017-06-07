@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+<!-- Generated 2011-12-9 12:17:31 by Hibernate Tools 3.2.1.GA -->  
+<hibernate-mapping>  
+    <class name="PO.Loan" table="loaninfo" >  
+        <id name="loantime" type="string">  
+            <column name="loantime" length="20"/>  
+            <generator class="assigned" />  
+        </id>  
+        <property name="tsname" type="string">  
+            <column name="tsname" length="20"  />  
+        </property>  
+        <property name="stuid" type="string">  
+            <column name="stuid" length="20"  />  
+        </property>    
+        <property name="returntime" type="string">  
+            <column name="returntime"   length="20" />  
+        </property>  
+    </class>  
+</hibernate-mapping>  

@@ -16,10 +16,14 @@
     <action name="adminadd" location="10,20" size="100,50" />
     <action name="stufind1" location="10,20" size="100,50" />
     <action name="adminfind" location="10,20" size="100,50" />
+    <action name="tsfind" location="10,20" size="100,50" />
+    <action name="loan" location="10,20" size="100,50" />
     <action name="stuupdate1" location="10,20" size="100,50" />
     <action name="adminupdate" location="10,20" size="100,50" />
+    <action name="tsupdate" location="10,20" size="100,50" />
     <action name="studel" location="10,20" size="100,50" />
     <action name="admindel" location="10,20" size="100,50" />
+    <action name="tsdel" location="10,20" size="100,50" />
     <action name="tsquery" location="10,20" size="100,50" />
   </package>
 </Struts2Diagram>

@@ -1,4 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>  
+<%@page import="PO.Book"%> 
+<%@ taglib prefix="s" uri="/struts-tags" %> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -110,8 +113,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li class="active">主页</li>
             </ul>
             <div class="m-b-md">
-              <h3 class="m-b-none">图书管理系统</h3>
-              <small>借书</small> </div>
+	 <form action="loan" method="post">  
+        <table align="center" width="40%" border="1">  
+            <tr>  
+            <s:textfield name="stuid" label="请输入借书人学号：" ></s:textfield>
+                <td>  
+                    请选择借书名：  
+                </td>  
+                <td>  
+                    <select name="tsname">  
+                         <%  
+                            ArrayList list=(ArrayList)session.getAttribute("allInfo");  
+                            if(list.isEmpty()){  
+                                %>  
+                                <option value="null">null</option>  
+                                <%  
+                            }else{  
+                                for(int i=0;i<list.size();i++){  
+                                    Book info=(Book)list.get(i);  
+                                    %>  
+                                        <option value="<%=info.getTsname()%>"><%=info.getTsname()%></option>  
+                                    <%  
+                                    }  
+                                }  
+                            %>  
+                    </select>  
+                </td>  
+                <td>  
+                    <s:submit value="确定" ></s:submit>
+                </td>  
+            </tr>  
+        </table>  
+        </form>
+               </div>
              
           </section>
         </section>

@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                    <li > <a href="......" > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>图书借阅管理</span> </a>
                     <ul class="nav lt">
                       <li > <a href="http://localhost:8080/boy/Loan.jsp" > <i class="fa fa-angle-right"></i> <span>借书管理</span> </a> </li>
-                      <li > <a href="http://localhost:8080/boy/return.jsp" > <i class="fa fa-angle-right"></i> <span>还书管理</span> </a> </li> 
+                      <li > <a href="http://localhost:8080/boy/return.jsp" > <i class="fa fa-angle-right"></i> <span>还书管理</span> </a> </li>
                     </ul>
                   </li>    
                 </ul>

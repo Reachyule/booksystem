@@ -53,7 +53,7 @@ public class adminadd extends ActionSupport {
 		// TODO Auto-generated method stub
 		
 	}
-	public Admin stu(){  
+	public Admin admin(){  
        Admin info = new Admin();
         info.setAdminname(this.getAdminname());
         info.setAdminpassword(this.getPassword1());  
@@ -62,7 +62,7 @@ public class adminadd extends ActionSupport {
       
     public String execute() throws Exception{  
     	adminaddDao lr = new adminaddDao();  
-        String ri = lr.saveInfo(stu());  
+        String ri = lr.saveInfo(admin());  
         if(ri.equals("success")){  
             mess ="success";  
         }  

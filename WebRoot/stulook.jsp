@@ -115,7 +115,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <td><%=info.getTsname()%></td>
                              <td><%=info.getTsCBS()%></td>
                               <td><%=info.getTsJJ()%></td>
-                               <td><%=info.getTsISBN()%></td>
+                               <td><%=info.getTsnumber()%></td>
                         </tr>  
                         <%  
                     }  

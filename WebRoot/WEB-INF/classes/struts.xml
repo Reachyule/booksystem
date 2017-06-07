@@ -74,6 +74,14 @@
             <result name="success">adminrevise2.jsp</result>  
             <result name="input">adminrevise.jsp</result>  
         </action>
+        <action name="tsfind" class="admin.tsfind">  
+            <result name="success">tsrevise2.jsp</result>  
+            <result name="input">tsrevise.jsp</result>  
+        </action>
+        <action name="loan" class="admin.loan">  
+            <result name="success">tsDATE.jsp</result>  
+            <result name="input">Loan1.jsp</result>  
+        </action>
         <action name="stuupdate1" class="admin.stuupdate">  
             <result name="success" type="chain">stuQuery</result>  
             <result name="input">sturevise2.jsp</result>  
@@ -82,6 +90,10 @@
             <result name="success" type="chain">adminQuery</result>  
             <result name="input">adminrevise2.jsp</result>  
         </action>
+        <action name="tsupdate" class="admin.tsupdate">  
+            <result name="success" type="chain">tsquery</result>  
+            <result name="input">tsrevise2.jsp</result>  
+        </action>
         <action name="studel" class="admin.studel">  
             <result name="success" type="chain">stuQuery</result>  
             <result name="input">studel.jsp</result>  
@@ -89,7 +101,11 @@
         <action name="admindel" class="admin.admindel">  
             <result name="success" type="chain">adminQuery</result>  
             <result name="input">admindel.jsp</result>  
-        </action>    
+        </action>
+        <action name="tsdel" class="admin.tsdel">  
+            <result name="success" type="chain">tsquery</result>  
+            <result name="input">tsdel.jsp</result>  
+        </action>     
         <action name="tsquery" class="admin.tsquery">  
             <result name="success">tsQuery.jsp</result>  
             <result name="input">index.jsp</result>  

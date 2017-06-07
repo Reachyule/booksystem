@@ -16,6 +16,7 @@
         <mapping resource="PO/Stu.hbm.xml"/>
         <mapping resource="PO/Admin.hbm.xml"/>
         <mapping resource="PO/Book.hbm.xml"/>   
+        <mapping resource="PO/Loan.hbm.xml"/> 
     </session-factory>  
   
 </hibernate-configuration>  

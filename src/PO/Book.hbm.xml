@@ -6,7 +6,7 @@
     <class name="PO.Book" table="book" >  
         <id name="tsname" type="string">  
             <column name="tsname" />  
-            <generator class="increment" />  
+            <generator class="assigned" />  
         </id>  
         <property name="tsimg" type="string">  
             <column name="tsimg" length="50"  />  
