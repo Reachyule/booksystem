@@ -1,4 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>  
+<%@page import="PO.Book"%> 
+<%@ taglib prefix="s" uri="/struts-tags" %> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -66,6 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <ul class="nav lt">
                       <li > <a href="http://localhost:8080/boy/Loan.jsp" > <i class="fa fa-angle-right"></i> <span>借书管理</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/return.jsp" > <i class="fa fa-angle-right"></i> <span>还书管理</span> </a> </li> 
+                    <li > <a href="logQuery" > <i class="fa fa-angle-right"></i> <span>借阅信息查询</span> </a> </li>
                     </ul>
                   </li>    
                 </ul>
@@ -97,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon"> <i class="fa fa-angle-left text"></i> <i class="fa fa-angle-right text-active"></i> </a>
             <div class="btn btn-icon btn-sm btn-dark">
-              <a href="....." > <i class=".nav-primary ul.nav>li>a"></i> <span>退出</span> </a> 
+              <a href="http://localhost:8080/boy/login.jsp" > <i class=".nav-primary ul.nav>li>a"></i> <span>退出</span> </a> 
             </div>
           </footer>
         </section>
@@ -110,8 +114,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li class="active">主页</li>
             </ul>
             <div class="m-b-md">
-              <h3 class="m-b-none">图书管理系统</h3>
-              <small>还书</small> </div>
+            <form action="return" method="post">  
+        <table align="center" width="40%" border="1">  
+            <tr>  
+            <s:textfield name="stuid" label="请输入还书人学号：" ></s:textfield>
+                <td>  
+                    请选择还书名：  
+                </td>  
+                <td>  
+                    <select name="tsname">  
+                         <%  
+                            ArrayList list=(ArrayList)session.getAttribute("allInfo");  
+                            if(list.isEmpty()){  
+                                %>  
+                                <option value="null">null</option>  
+                                <%  
+                            }else{  
+                                for(int i=0;i<list.size();i++){  
+                                    Book info=(Book)list.get(i);  
+                                    %>  
+                                        <option value="<%=info.getTsname()%>"><%=info.getTsname()%></option>  
+                                    <%  
+                                    }  
+                                }  
+                            %>  
+                    </select>  
+                </td>  
+                <td>  
+                    <s:submit value="确定" ></s:submit>
+                </td>  
+            </tr>  
+        </table>  
+        </form>
+               </div>
              
           </section>
         </section>

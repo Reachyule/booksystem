@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" import="java.util.ArrayList,PO.Loan"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -41,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <li > <a href="stulook" > <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>图书列表</span> </a>
                     
                   </li>
-                  <li > <a href="....." > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>借阅信息查询</span> </a>
+                  <li > <a href="studate" > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>借阅信息查询</span> </a>
              
                   </li>
                   <li > <a href="stufind" > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>修改账户信息</span> </a>
@@ -79,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon"> <i class="fa fa-angle-left text"></i> <i class="fa fa-angle-right text-active"></i> </a>
             <div class="btn btn-icon btn-sm btn-dark">
-              <a href="....." > <i class=".nav-primary ul.nav>li>a"></i> <span>退出</span> </a> 
+              <a href="http://localhost:8080/boy/login.jsp" > <i class=".nav-primary ul.nav>li>a"></i> <span>退出</span> </a> 
             </div>
           </footer>
         </section>
@@ -92,8 +91,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li class="active">主页</li>
             </ul>
             <div class="m-b-md">
-              <h3 class="m-b-none">图书管理系统</h3>
-              <small>欢迎${stuid }到来图书管理系统，这里可以查询各类图书信息和账户信息</small> </div>
+            <span>你要查询的数据表中共有<%=request.getSession().getAttribute("datecount")%>条记录</span>
+              <table border="1px" width="80%" align="center">
+            		<tr><th>编号</th><th>图书名</th><th>学号</th><th>记录</th></tr>
+            		<%
+                ArrayList list=(ArrayList)session.getAttribute("dateallInfo");  
+                if(list.isEmpty()){  
+                    %>  
+                    <tr>  
+                        <td align="center">  
+                            <span>暂无信息!</span>  
+                        </td>  
+                    </tr>  
+                    <%  
+                }else{  
+                    for(int i=0;i<list.size();i++){  
+                        Loan info=(Loan)list.get(i);  
+                        %>  
+                        <tr>  
+                            <td align="center"><%=i+1%></td>  
+                            <td><%=info.getTsname()%></td>
+                             <td><%=info.getStuid()%></td>
+                              <td><%=info.getLoantime()%></td>
+                        </tr>  
+                        <%  
+                    }  
+                }  
+            %>  
+            	</table>
+               </div>
              
           </section>
         </section>

@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body bgcolor="#CCCCFF">  
     <hr>  
     <table border="0" align="center" bgcolor="#AABBCCDD">  
-        <tr><td><a href="http://localhost:8080/boy/stuindex.jsp">修改成功，点击返回主页面</a></td></tr>  
+        <tr><td><a href="http://localhost:8080/boy/login.jsp">修改成功，请重新登录</a></td></tr>  
     </table>  
           
   </body>  

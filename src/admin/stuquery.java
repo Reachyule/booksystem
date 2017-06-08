@@ -11,8 +11,8 @@ public class stuquery extends ActionSupport{
         request=ServletActionContext.getRequest();  
         stuqueryDao dao=new stuqueryDao();  
         List list=dao.findAllInfo();  
-        request.getSession().setAttribute("count", list.size());  
-        request.getSession().setAttribute("allInfo", list);  
+        request.getSession().setAttribute("stucount", list.size());  
+        request.getSession().setAttribute("stuallInfo", list);  
         message="success";  
         return message;  
     }  

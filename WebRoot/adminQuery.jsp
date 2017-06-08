@@ -66,6 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <ul class="nav lt">
                       <li > <a href="http://localhost:8080/boy/Loan.jsp" > <i class="fa fa-angle-right"></i> <span>借书管理</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/return.jsp" > <i class="fa fa-angle-right"></i> <span>还书管理</span> </a> </li> 
+                    <li > <a href="logQuery" > <i class="fa fa-angle-right"></i> <span>借阅信息查询</span> </a> </li>
                     </ul>
                   </li>    
                 </ul>
@@ -97,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon"> <i class="fa fa-angle-left text"></i> <i class="fa fa-angle-right text-active"></i> </a>
             <div class="btn btn-icon btn-sm btn-dark">
-              <a href="....." > <i class=".nav-primary ul.nav>li>a"></i> <span>退出</span> </a> 
+              <a href="http://localhost:8080/boy/login.jsp" > <i class=".nav-primary ul.nav>li>a"></i> <span>退出</span> </a> 
             </div>
           </footer>
         </section>
@@ -110,11 +111,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li class="active">主页</li>
             </ul>
             <div class="m-b-md">
-              <span>你要查询的数据表中共有<%=request.getSession().getAttribute("count")%>个管理员</span>
+              <span>你要查询的数据表中共有<%=request.getSession().getAttribute("admincount")%>个管理员</span>
               <table border="1px" width="80%" align="center">
             		<tr><th>编号</th><th>管理员账号</th><th>管理员密码</th></tr>
             		<%
-                ArrayList list=(ArrayList)session.getAttribute("allInfo");  
+                ArrayList list=(ArrayList)session.getAttribute("adminallInfo");  
                 if(list.isEmpty()){  
                     %>  
                     <tr>  

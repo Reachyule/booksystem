@@ -1,7 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@page import="java.util.ArrayList"%>  
-<%@page import="PO.Admin"%>
-<%@taglib  prefix="s" uri="/struts-tags" %>  
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" import="java.util.ArrayList,PO.Loan"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -42,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <li class="active"> <a href="http://localhost:8080/boy/index.jsp" class="active"> <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span>主页</span> </a> </li>
                   <li > <a href="...." > <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>图书信息管理</span> </a>
                     <ul class="nav lt">
-                    	<li > <a href="tsquery" > <i class="fa fa-angle-right"></i> <span>查询图书信息</span> </a> </li>
+                    	<li > <a href="tsQuery" > <i class="fa fa-angle-right"></i> <span>查询图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsadd.jsp" > <i class="fa fa-angle-right"></i> <span>增加图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsrevise.jsp" > <i class="fa fa-angle-right"></i> <span>修改图书信息</span> </a> </li>
                       <li > <a href="http://localhost:8080/boy/tsdel.jsp" > <i class="fa fa-angle-right"></i> <span>删除图书信息</span> </a> </li>
@@ -68,8 +65,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                    <li > <a href="......" > <i class="fa fa-file-text icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>图书借阅管理</span> </a>
                     <ul class="nav lt">
                       <li > <a href="http://localhost:8080/boy/Loan.jsp" > <i class="fa fa-angle-right"></i> <span>借书管理</span> </a> </li>
-                      <li > <a href="http://localhost:8080/boy/return.jsp" > <i class="fa fa-angle-right"></i> <span>还书管理</span> </a> </li> 
-                   <li > <a href="logQuery" > <i class="fa fa-angle-right"></i> <span>借阅信息查询</span> </a> </li>
+                      <li > <a href="http://localhost:8080/boy/return.jsp" > <i class="fa fa-angle-right"></i> <span>还书管理</span> </a> </li>
+                      <li > <a href="logQuery" > <i class="fa fa-angle-right"></i> <span>借阅信息查询</span> </a> </li> 
                     </ul>
                   </li>    
                 </ul>
@@ -114,47 +111,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li class="active">主页</li>
             </ul>
             <div class="m-b-md">
-            <s:form action="adminupdate" method="post"> 
-    	<div class="signup">
-    	<table align="center" width="30%" bgcolor="gray" border="5"> 
-    	<%  
-                ArrayList list=(ArrayList)session.getAttribute("oneInfo");  
-                Admin info=(Admin)list.get(0);  
-                %> 
-        	 <tr>  
-                        <td>  
-                            账号  
-                        </td>  
-                        <td>  
-                            <input name="adminname" value="<%=info.getAdminname()%>" readonly="readonly"/>  
+              <span>你要查询的数据表中共有<%=request.getSession().getAttribute("logcount")%>条记录</span>
+              <table border="1px" width="80%" align="center">
+            		<tr><th>编号</th><th>图书名</th><th>学号</th><th>记录</th></tr>
+            		<%
+                ArrayList list=(ArrayList)session.getAttribute("logallInfo");  
+                if(list.isEmpty()){  
+                    %>  
+                    <tr>  
+                        <td align="center">  
+                            <span>暂无信息!</span>  
                         </td>  
                     </tr>  
-                    <tr>  
-                        <td>  
-                            新密码  
-                        </td>  
-                        <td>  
-                            <input type="password" name="password1" />  
-                        </td>  
-                    </tr> 
-                    <tr>  
-                        <td>  
-                            确定密码  
-                        </td>  
-                        <td>  
-                            <input type="password" name="password2" />  
-                        </td>  
-                    </tr>   
-                    <tr>  
-                        <td colspan="2">  
-                            <s:submit value="提交"></s:submit>  
-                        </td>  
-                    </tr>  
-                    </table>
-        </div>
-        </s:form>      
-                </div>
-             
+                    <%  
+                }else{  
+                    for(int i=0;i<list.size();i++){  
+                        Loan info=(Loan)list.get(i);  
+                        %>  
+                        <tr>  
+                            <td align="center"><%=i+1%></td>  
+                            <td><%=info.getTsname()%></td>
+                             <td><%=info.getStuid()%></td>
+                              <td><%=info.getLoantime()%></td>
+                        </tr>  
+                        <%  
+                    }  
+                }  
+            %>  
+            	</table>
+             </div>
           </section>
         </section>
         <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a> </section>

@@ -11,7 +11,7 @@
         <interceptor-ref name="defaultStack"/>
             <param name="savePath">./save</param>  
             <result name="input">tsadd.jsp</result>
-            <result name="success">tsadd2.jsp</result>  
+            <result name="success" type="chain">tsquery</result>  
         </action>  
         <action name="register" class="login.register">  
             <result name="success">/login.jsp</result>  
@@ -39,6 +39,10 @@
         <action name="stufind" class="student.find">  
             <result name="success">stuupdate.jsp</result>  
             <result name="input">stuindex.jsp</result>  
+        </action> 
+         <action name="studate" class="student.date">  
+            <result name="success">studate.jsp</result>  
+            <result name="input">stuindex.jsp</result>  
         </action>  
         <action name="stuupdate" class="student.update">  
             <result name="success" >success.jsp</result>  
@@ -56,13 +60,17 @@
             <result name="success" >stuQuery.jsp</result>  
             <result name="input">index.jsp</result>  
         </action>
+        <action name="logQuery" class="admin.log">  
+            <result name="success" >log.jsp</result>  
+            <result name="input">index.jsp</result>  
+        </action>
         <action name="stuadd" class="login.register">  
-            <result name="success">/stuadd2.jsp</result>  
+            <result name="success" type="chain">stuQuery</result>  
             <result name="input">/stuadd.jsp</result>  
             <result name="error">/stuadd.jsp</result>  
         </action>
         <action name="adminadd" class="admin.adminadd">  
-            <result name="success">/adminadd2.jsp</result>  
+            <result name="success" type="chain">adminQuery</result>  
             <result name="input">/adminadd.jsp</result>  
             <result name="error">/adminadd.jsp</result>  
         </action>
@@ -79,8 +87,12 @@
             <result name="input">tsrevise.jsp</result>  
         </action>
         <action name="loan" class="admin.loan">  
-            <result name="success">tsDATE.jsp</result>  
+            <result name="success" type="chain">logQuery</result>  
             <result name="input">Loan1.jsp</result>  
+        </action>
+        <action name="return" class="admin.returnaction">  
+            <result name="success" type="chain">logQuery</result>  
+            <result name="input">return.jsp</result>  
         </action>
         <action name="stuupdate1" class="admin.stuupdate">  
             <result name="success" type="chain">stuQuery</result>  
@@ -110,5 +122,6 @@
             <result name="success">tsQuery.jsp</result>  
             <result name="input">index.jsp</result>  
         </action>
+        
     </package>  
 </struts>      

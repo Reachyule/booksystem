@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="forget clearfix">
 					<a class="pull-left" href="http://localhost:8080/boy/register.jsp" title="注册新用户" data-toggle="tooltip" data-placement="top">注册新用户</a>
-					<a class="pull-right" href="###" title="通过验证信息找回密码" data-toggle="tooltip" data-placement="top">忘记密码</a>
+					<!--  <a class="pull-right" href="###" title="通过验证信息找回密码" data-toggle="tooltip" data-placement="top">忘记密码</a>-->
 				</div>
 			</div>
 		</div>

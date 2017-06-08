@@ -1,6 +1,8 @@
 package admin;
 import Dao.tsfindDao;  
 import com.opensymphony.xwork2.ActionSupport;  
+
+import java.io.UnsupportedEncodingException;
 import java.util.List;  
 import javax.servlet.http.HttpServletRequest;  
 import javax.swing.JOptionPane;  
@@ -12,7 +14,15 @@ public class tsfind extends ActionSupport{
     
 
 	public String getTsname() {
-		return tsname;
+		String param=tsname;
+    	 try {
+    		 param=new String(param.getBytes("ISO-8859-1"), "UTF-8");
+ 		} catch (UnsupportedEncodingException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+     return param;
+      //return tsname;  
 	}
 	public void setTsname(String tsname) {
 		this.tsname = tsname;

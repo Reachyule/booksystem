@@ -3,11 +3,11 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
 <!-- Generated 2011-12-9 12:17:31 by Hibernate Tools 3.2.1.GA -->  
 <hibernate-mapping>  
-    <class name="PO.Loan" table="loaninfo" >  
+    <class name="PO.Loan" table="loaninfo1" >  
         <id name="loantime" type="string">  
-            <column name="loantime" length="20"/>  
+            <column name="loantime" length="50"/>  
             <generator class="assigned" />  
-        </id>  
+        </id>   
         <property name="tsname" type="string">  
             <column name="tsname" length="20"  />  
         </property>  

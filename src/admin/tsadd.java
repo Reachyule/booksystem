@@ -30,15 +30,8 @@ public class tsadd extends ActionSupport{
 		this.tsimg = tsimg;
 	}
 	public String getTsCBS() {
-		String param=tsCBS;
-   	 try {
-   		 param=new String(param.getBytes("ISO-8859-1"), "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    return param;
-     //return tsname;  
+
+     return tsCBS;  
 	}
 	public void setTsCBS(String tsCBS) {
 		this.tsCBS = tsCBS;
@@ -50,29 +43,13 @@ public class tsadd extends ActionSupport{
 		this.tsnumber = tsnumber;
 	}
 	public String getTsJJ() {
-		String param=tsJJ;
-   	 try {
-   		 param=new String(param.getBytes("ISO-8859-1"), "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    return param;
-     //return tsname;  
+     return tsJJ;  
 	}
 	public void setTsJJ(String tsJJ) {
 		this.tsJJ = tsJJ;
 	}
 	public String getTsname() {
-		String param=tsname;
-   	 try {
-   		 param=new String(param.getBytes("ISO-8859-1"), "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    return param;
-     //return tsname;  
+     return tsname;  
 	}
 	public void setTsname(String tsname) {
 		this.tsname = tsname;
